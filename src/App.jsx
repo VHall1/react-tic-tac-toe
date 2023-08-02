@@ -29,8 +29,9 @@ export function App() {
         {rows.map((value, idx) => (
           <div
             className="square"
-            key={`square-${idx}`}
             onClick={() => handlePlay(idx)}
+            key={`square-${idx}`}
+            data-testid={`square-${idx}`}
           >
             {value}
           </div>
