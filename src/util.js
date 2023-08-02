@@ -11,15 +11,16 @@ const calculateWinner = (rows) => {
     [2, 4, 6],
   ];
 
-  for(let idx = 0; idx < lines.length; idx++) {
+  for (let idx = 0; idx < lines.length; idx++) {
     const [x, y, z] = lines[idx];
     if (rows[x] && rows[x] === rows[y] && rows[x] === rows[z]) {
       return rows[x];
     }
   }
-}
+};
 
-const calculateNextPlayer = (rows) => rows.filter(Boolean).length % 2 === 0 ? 'X' : 'O';
+const calculateNextPlayer = (rows) =>
+  rows.filter(Boolean).length % 2 === 0 ? "X" : "O";
 
 const calculateStatus = (winner, rows, player) => {
   if (winner) {
@@ -27,10 +28,10 @@ const calculateStatus = (winner, rows, player) => {
   } else if (rows.every(Boolean)) {
     return `Tie`;
   } else if (player) {
-    return `Next player: ${player}`
+    return `Next player: ${player}`;
   } else {
-    return 'Got an unexpected error. Please restart the game'
+    return "Got an unexpected error. Please restart the game";
   }
-}
+};
 
 export { calculateWinner, calculateNextPlayer, calculateStatus };
