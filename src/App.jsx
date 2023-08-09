@@ -1,5 +1,5 @@
-import * as React from "react";
-import { calculateWinner, calculateNextPlayer, calculateStatus } from "./util";
+import * as React from 'react';
+import { calculateWinner, calculateNextPlayer, calculateStatus } from './util';
 
 export function App() {
   const [rows, setRows] = React.useState(initialRows);
@@ -17,9 +17,9 @@ export function App() {
   };
 
   return (
-    <>
+    <div className="max-md:px-4">
       <h1
-        className="mt-4 text-center text-6xl text-white font-bold"
+        className="mt-4 text-center text-6xl max-md:text-4xl text-white font-bold"
         data-testid="status"
       >
         {status}
@@ -39,14 +39,11 @@ export function App() {
       </div>
 
       <div className="flex justify-center mt-8">
-        <button
-          className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-3 px-8 rounded"
-          onClick={handleReset}
-        >
+        <button className="btn-primary btn-large" onClick={handleReset}>
           Reset
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
