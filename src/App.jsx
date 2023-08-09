@@ -18,17 +18,17 @@ export function App() {
 
   return (
     <>
-      <div className="header">
-        <h1 className="status">{status}</h1>
-        <button className="reset" onClick={handleReset}>
-          Reset game
-        </button>
-      </div>
+      <h1
+        className="mt-4 text-center text-6xl text-white font-bold"
+        data-testid="status"
+      >
+        {status}
+      </h1>
 
-      <div className="grid">
+      <div className="mt-8 grid grid-rows-3 grid-cols-3 gap-3 aspect-square max-w-md mx-auto">
         {rows.map((value, idx) => (
           <div
-            className="square"
+            className="bg-slate-700 rounded-xl flex justify-center items-center text-white text-6xl font-bold border-solid border-2 border-slate-400 hover:border-sky-500 cursor-pointer"
             onClick={() => handlePlay(idx)}
             key={`square-${idx}`}
             data-testid={`square-${idx}`}
@@ -36,6 +36,15 @@ export function App() {
             {value}
           </div>
         ))}
+      </div>
+
+      <div className="flex justify-center mt-8">
+        <button
+          className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-3 px-8 rounded"
+          onClick={handleReset}
+        >
+          Reset
+        </button>
       </div>
     </>
   );
